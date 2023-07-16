@@ -23,6 +23,14 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
+        <!-- ReCaptcha -->
+        {{-- <div class="g-recaptcha mt-4" data-sitekey={{ config('services.recaptcha.key') }}></div> --}}
+        <div class="mt-4">
+            <x-input-label for="g-recaptcha" :value="__('ReCaptcha')" />
+            <div class="g-recaptcha" data-sitekey={{ config('services.recaptcha.key') }}></div>
+            <x-input-error :messages="$errors->get('g-recaptcha-response')" class="mt-2" />
+        </div>
+
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
